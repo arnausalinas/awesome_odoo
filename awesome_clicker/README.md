@@ -91,7 +91,7 @@ Define el servicio `clickerService`, que proporciona el modelo `ClickerModel` y 
    ¡Gracias por explorar el módulo Awesome Clicker! Si tienes alguna pregunta, sugerencia o necesitas ayuda, no dudes en ponerte en contacto.
    
    **Autor**: Arnau Salinas  
-   **Email**: [arnau.salinas@example.com](mailto:arnau.salinas@example.com)  
+   **Email**: [arnau.salinas@example.com](mailto:arnau@planesnet.com) 
    **GitHub**: [ArnauSalinas](https://github.com/arnausalinas)  
    **LinkedIn**: [Arnau Salinas](https://www.linkedin.com/in/arnau-salinas-2426bsb)
    
