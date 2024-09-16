@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <!-- Definición de la plantilla 'awesome_dashboard.NumberCard' -->
+    <t t-name="awesome_dashboard.NumberCard" owl="1">
+        <!-- Muestra el título del card, escapando el contenido para evitar problemas de seguridad -->
+        <t t-esc="props.title"/>
+        <!-- Contenedor para el valor del card, con clases para estilo -->
+        <div class="fs-1 fw-bold text-success text-center">
+            <!-- Muestra el valor del card, escapando el contenido para evitar problemas de seguridad -->
+            <t t-esc="props.value"/>
+        </div>
+    </t>
+</templates>

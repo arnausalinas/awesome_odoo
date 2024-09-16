@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <!-- Define la plantilla para el componente Todo -->
+    <t t-name="awesome_owl.todo" owl="1">
+        <!-- Contenedor principal de la tarea, cambia de clase si la tarea está marcada como completada -->
+        <div class="todo-item ml-5" t-att-class="{'todo-done': props.done}">
+            <!-- Checkbox para marcar o desmarcar la tarea como completada -->
+            <input type="checkbox" t-att-checked="props.done" t-on-change="handleCheckboxChange" />
+                <!-- Tipo de entrada como checkbox -->
+                <!-- Vincula el estado del checkbox con la propiedad `done` -->
+                <!-- Llama a `handleCheckboxChange` cuando el estado del checkbox cambia -->
+
+            <!-- Muestra el ID de la tarea -->
+            <t t-esc="props.id"/>
+            <!-- Muestra el texto de la tarea -->
+            <t t-esc="props.todo"/>
+            <!-- Ícono de eliminación con un evento `click` para eliminar la tarea -->
+            <span class="fa fa-remove" t-on-click="handleRemoveTodo"/>
+        </div>
+    </t>
+</templates>

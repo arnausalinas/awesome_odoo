@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- Define una plantilla con el nombre 'awesome_gallery.GalleryRenderer'. -->
+    <t t-name="awesome_gallery.GalleryRenderer">
+        <!-- Contenedor para mostrar las imágenes en una disposición de cuadrícula (grid). -->
+        <div class="row">
+            <!-- Itera sobre los registros del modelo, asignando cada uno a `record`. -->
+            <t t-foreach="props.model.records" t-as="record" t-key="record.id">
+                <!-- Contenedor para cada imagen, ajustando el tamaño y el espaciado en función del tamaño de la pantalla. -->
+                <div class="col-lg-2 col-md-3 col-sm-4 px-2 col-6 d-flex">
+                    <!-- Usa el componente `GalleryImage` para cada registro. -->
+                    <!-- Se pasan las siguientes propiedades al componente `GalleryImage`: -->
+                    <!-- - `record`: el registro de la imagen. -->
+                    <!-- - `model`: el modelo de galería. -->
+                    <!-- - `onImageUpload`: la función para manejar la carga de imágenes. -->
+                    <!-- - `tooltipTemplate`: la plantilla del tooltip procesada, accesible a través de `this.owlTooltipTemplate`. -->
+                    <GalleryImage 
+                        record="record" 
+                        model="props.model" 
+                        onImageUpload="props.onImageUpload" 
+                        tooltipTemplate="this.owlTooltipTemplate"/>
+                </div>
+            </t>
+        </div>
+        <br/><br/>
+    </t>
+</templates>

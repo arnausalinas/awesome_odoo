@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <!-- Define la plantilla llamada "awesome_owl.playground" con soporte OWL activado -->
+    <t t-name="awesome_owl.playground" owl="1">
+        
+        <!-- Primera sección con un margen de 3 píxeles -->
+        <div class="p-3">
+            <!-- Dos componentes Counter, cada uno enviando la función checkIfClickedCallback -->
+            <Counter checkIfClicked="checkIfClickedCallback"/>
+            <Counter checkIfClicked="checkIfClickedCallback"/>
+            <!-- Muestra el valor de sumatorioClicks -->
+            <t t-esc="state.sumatorioClicks"/>
+        </div>
+
+        <!-- Segunda sección -->
+        <div class="p-3">
+            <!-- Un texto simple -->
+            <p>Hello World</p>
+            <!-- Componente Todolist -->
+            <Todolist/>
+        </div>
+
+        <!-- Tercera sección: Recorre y muestra las tarjetas definidas en `state.cards` -->
+        <div>
+            <!-- Usa t-foreach para iterar sobre cada tarjeta en `state.cards` -->
+            <t t-foreach="state.cards" t-as="card" t-key="card.id">
+                <!-- Renderiza el componente Card pasando id, título y contenido -->
+                <Card id="card.id" title="card.title" content="card.content"/>
+            </t>
+        </div>
+
+        <!-- Cuarta sección: Recorre y muestra las tarjetas en `state2.cards`, las cuales tienen contenido HTML seguro -->
+        <div>
+            <t t-foreach="state2.cards" t-as="card" t-key="card.id">
+                <!-- Muestra el componente Card con el contenido de `state2.cards` -->
+                <Card id="card.id" title="card.title" content="card.content"/>
+            </t>
+        </div>
+
+        <!-- Quinta sección: Itera sobre el estado `cartas` y renderiza las cartas y su contenido -->
+        <div>
+            <!-- Usa t-foreach para iterar sobre cada carta en `state.cartas` -->
+            <t t-foreach="state.cartas" t-as="carta" t-key="carta.id">
+                <!-- Renderiza el componente Carta y dentro de ella un componente Counter -->
+                <Carta id="carta.id" title="carta.title">
+                    <!-- Cada carta tiene su propio componente Counter que envía el callback para contar los clics -->
+                    <Counter checkIfClicked="checkIfClickedCallback"/>
+                </Carta>
+            </t>
+            <!-- Muestra el valor actualizado de sumatorioClicks después del ciclo -->
+            <t t-esc="state.sumatorioClicks"/>
+        </div>
+        
+    </t>
+</templates>

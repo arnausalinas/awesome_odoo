@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <!-- Define la plantilla para el componente `Counter` -->
+    <t t-name="awesome_owl.counter" owl="1">
+        <div>
+            <!-- Muestra el valor actual del contador -->
+            <p>Counter: <t t-esc="state.value"/></p> <!-- Usa `t-esc` para mostrar el valor del contador desde el estado `state.value` -->
+
+            <!-- Botón que incrementa el valor del contador al hacer clic -->
+            <button class="btn btn-primary" t-on-click="increment">
+                Increment  <!-- Texto del botón -->
+            </button>
+        </div>
+    </t>
+</templates>

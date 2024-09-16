@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <!-- Define una plantilla llamada "awesome_kanban.CustomerList" -->
+    <t t-name="awesome_kanban.CustomerList">
+        <!-- Define una tabla para mostrar la lista de clientes -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>
+                        <!-- Título y filtro de clientes con pedidos activos -->
+                        <span>Customers with active orders</span>
+                        <!-- Checkbox para filtrar clientes activos -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" t-on-change="onChangeActiveCustomers"/>
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Active customers
+                            </label>
+                        </div>
+                        <!-- Componente `Pager` para paginación -->
+                        <Pager offset="pager.offset" limit="pager.limit" total="pager.total" onUpdate.bind="onUpdatePager" />
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <!-- Campo de entrada para filtrar clientes por nombre -->
+                        <input class="o_input w-100" placeholder="Filter customers" t-model="state.searchString"/>
+                    </td>
+                </tr>
+                <!-- Itera sobre `displayedPartners` para mostrar cada cliente -->
+                <tr t-foreach="displayedPartners" t-as="partner" t-key="partner.id" class="o_awesome_kanban_customer_hover">
+                    <!-- Muestra el nombre del cliente y maneja el clic para seleccionar el cliente -->
+                    <td class="cursor-pointer" t-esc="partner.display_name" t-on-click="() => props.selectCustomer(partner.id, partner.display_name)" />
+                </tr>
+            </tbody>
+        </table>
+    </t>
+</templates>

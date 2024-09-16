@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <!-- Define la plantilla llamada "awesome_owl.todolist" con soporte OWL activado -->
+    <t t-name="awesome_owl.todolist" owl="1">
+
+        <!-- Campo de entrada para agregar una nueva tarea -->
+        <input id="input-todo" t-ref="input-todo" t-on-keyup="addTodo" t-on-input="handleInputChange" t-att-value="state.newTodo" placeholder="Añade una nueva tarea" />
+            <!-- Asigna un ID al campo de entrada -->
+            <!-- Usa `t-ref` para crear una referencia al elemento en el código JavaScript -->
+            <!-- Ejecuta la función `addTodo` al soltar una tecla (como Enter) -->
+            <!-- Ejecuta `handleInputChange` para actualizar el estado cuando el texto cambie -->
+            <!-- Enlaza el valor del campo con el estado `newTodo` -->
+            <!-- Texto de marcador dentro del campo de entrada -->
+
+
+        <!-- Botón para enfocar el campo de entrada -->
+        <button t-on-click="focusInput">focus input</button>        <!-- Ejecuta `focusInput` al hacer clic en el botón -->
+
+        <br/>
+        <br/>
+
+        <!-- Contenedor para la lista de tareas -->
+        <div class="todolist">
+            <!-- Itera sobre el estado `todos` para renderizar cada tarea usando el componente Todo -->
+            <t t-foreach="state.todos" t-as="todo" t-key="todo.id">
+                <!-- Renderiza el componente Todo, pasando el ID, texto de la tarea, su estado (completada o no),
+                     y las funciones para alternar el estado y eliminar la tarea -->
+                <Todo id="todo.id" todo="todo.todo" done="todo.done" toggleState="toggleTodoState" removeTodo="removeTodo"/>
+                    <!-- ID único de la tarea -->
+                    <!-- Texto de la tarea -->
+                    <!-- Estado de completado de la tarea -->
+                    <!-- Función para alternar el estado de la tarea -->
+                    <!-- Función para eliminar la tarea -->
+            </t>
+        </div>
+    </t>
+</templates>

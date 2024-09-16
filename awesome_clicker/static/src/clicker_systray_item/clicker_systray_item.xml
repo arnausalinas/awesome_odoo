@@ -1,0 +1,56 @@
+<templates xml:space="preserve">
+    <!-- Definición de la plantilla para el componente ClickerSystray -->
+    <t t-name="awesome_clicker.ClickerSystray">
+        <!-- Contenedor del systray (barra superior de navegación) -->
+        <div class="o_nav_entry">
+            <!-- Componente Dropdown que actúa como menú desplegable -->
+            <Dropdown>
+                <!-- Contenido que actúa como el botón activador del Dropdown -->
+                <t t-set-slot="toggler">
+                    <!-- Componente ClickerValue (muestra el valor actual del clicker) -->
+                    <ClickerValue/>
+                    <!-- Icono de puntero -->
+                    <i class="fa fa-mouse-pointer fa-fw"></i>,
+                    <!-- Número total de árboles comprados -->
+                    <t t-esc="this.numberTrees"/> 
+                    <!-- Icono de árbol -->
+                    <i class="fa fa-tree fa-fw"></i>,
+                    <!-- Número total de frutas recogidas -->
+                    <t t-esc="this.numberFruits"/>
+                    <!-- Icono de manzana -->
+                    <i class="fa fa-apple fa-fw"></i>
+                </t>
+
+                <!-- Opción del Dropdown: Botón para abrir el juego del clicker -->
+                <DropdownItem>
+                    <button class="btn btn-secondary" t-on-click="this.openClientAction">
+                        Open the clicker game
+                    </button>
+                </DropdownItem>
+
+                <!-- Opción del Dropdown: Botón para comprar un ClickBot -->
+                <DropdownItem>
+                    <button class="btn btn-secondary" t-on-click="() => this.clicker.buyBot('clickbot')">
+                        Buy a ClickBot
+                    </button>
+                </DropdownItem>
+
+                <!-- Opción del Dropdown: Lista de árboles comprados -->
+                <DropdownItem t-foreach="this.clicker.trees" t-as="tree" t-key="tree">
+                    <!-- Muestra la cantidad comprada de cada árbol -->
+                    <t t-esc="tree_value.purchased"/>x
+                    <!-- Nombre del tipo de árbol -->
+                    <t t-esc="tree"/>
+                </DropdownItem>
+
+                <!-- Opción del Dropdown: Lista de frutas recogidas -->
+                <DropdownItem t-foreach="this.clicker.fruits" t-as="fruit" t-key="fruit">
+                    <!-- Muestra la cantidad de cada fruta -->
+                    <t t-esc="fruit_value"/>x
+                    <!-- Nombre del tipo de fruta -->
+                    <t t-esc="fruit"/>
+                </DropdownItem>
+            </Dropdown>
+        </div>
+    </t>
+</templates>

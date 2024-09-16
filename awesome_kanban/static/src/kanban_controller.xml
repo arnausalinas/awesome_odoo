@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <!-- Define una plantilla llamada "awesome_kanban.AwesomeKanbanController" que hereda de la vista Kanban estándar -->
+    <t t-name="awesome_kanban.AwesomeKanbanController" t-inherit="web.KanbanView">
+        <!-- Usa XPath para localizar y modificar una parte específica de la plantilla heredada -->
+        <xpath expr="//t[@t-component='props.Renderer']" position="before">
+            <!-- Añade un nuevo elemento <div> antes del componente Renderer en la vista Kanban -->
+            <div class="bg-white border-end o_awesome_kanban_sidebar overflow-auto h-100">
+                <!-- Inserta el componente `CustomerList` dentro del nuevo <div> y enlaza su método `selectCustomer` -->
+                <!-- `selectCustomer.bind` asegura que el método `selectCustomer` del controlador se pase al componente `CustomerList` -->
+                <CustomerList selectCustomer.bind="selectCustomer"/>
+            </div>
+        </xpath>
+    </t>
+</templates>

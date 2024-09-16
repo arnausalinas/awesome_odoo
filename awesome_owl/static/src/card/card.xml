@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+  <!-- Define la plantilla para el componente `Card` -->
+  <t t-name="awesome_owl.card" owl="1">
+    <!-- Contenedor de la carta con clases para el estilo de Bootstrap -->
+    <div class="card d-inline-block m-2" style="width: 18rem;">
+      <div class="card-body">
+        <!-- Título de la carta que muestra `title` e `id` pasados como props -->
+        <h5 class="card-title">
+          <!-- Muestra el título de la carta -->
+          <t t-out="props.title"/>
+          <!-- Muestra el ID de la carta -->
+          <t t-out="props.id"/>
+        </h5>
+        <!-- Muestra el contenido de la carta -->
+        <t t-out="props.content"/>
+      </div>
+    </div>
+  </t>
+</templates>

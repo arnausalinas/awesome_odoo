@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <!-- Definición de la plantilla 'awesome_dashboard.DashboardItem' -->
+    <t t-name="awesome_dashboard.DashboardItem">
+        <!-- Contenedor principal del componente, con clases de Bootstrap para estilo -->
+        <div class="card m-2 border-dark" t-attf-style="width: {{18*props.size}}rem;">
+            <!-- Cuerpo del card donde se insertará el contenido -->
+            <div class="card-body">
+                <!-- Slot predeterminado donde se puede insertar contenido adicional desde el componente padre -->
+                <t t-slot="default"/>
+            </div>
+        </div>
+    </t>
+</templates>

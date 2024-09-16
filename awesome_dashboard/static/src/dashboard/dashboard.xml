@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <!-- Definición de la plantilla 'awesome_dashboard.AwesomeDashboard' -->
+    <t t-name="awesome_dashboard.AwesomeDashboard">
+        <!-- Componente Layout que organiza el contenido del dashboard -->
+        <Layout display="display" className="'o_dashboard h-100'">
+            
+            <!-- Botones para la vista de clientes y leads, colocados en el área de botones del layout -->
+            <t t-set-slot="layout-buttons">
+                <button class="btn btn-primary" t-on-click="openCustomerView">Customers</button>
+                <button class="btn btn-primary" t-on-click="openLeads">Leads</button>
+            </t>
+
+            <!-- Botón para abrir el diálogo de configuración, ubicado en el área de acciones adicionales del panel de control -->
+            <t t-set-slot="control-panel-additional-actions">
+                <button t-on-click="openConfiguration" class="btn p-0 ms-1 border-0">
+                    <i class="fa fa-cog"></i>
+                </button>
+            </t>
+
+            <!-- Contenedor para los elementos del dashboard, mostrado si las estadísticas están listas -->
+            <div class="d-flex flex-wrap" t-if="statistics.isReady">
+                <!-- Itera sobre los elementos del dashboard -->
+                <t t-foreach="items" t-as="item" t-key="item.id">
+                    <!-- Muestra el DashboardItem solo si el id del item no está en la lista de elementos deshabilitados -->
+                    <DashboardItem t-if="!state.disabledItems.includes(item.id)" size="item.size || 1">
+                        <!-- Configura las propiedades del DashboardItem, usando las estadísticas si están disponibles -->
+                        <t t-set="itemProp" t-value="item.props ? item.props(statistics) : {'data': statistics}"/>
+                        <!-- Renderiza el componente correspondiente al item -->
+                        <t t-component="item.Component" t-props="itemProp" />
+                    </DashboardItem>
+                </t>
+            </div>
+        </Layout>    
+    </t>
+
+    <!-- Definición de la plantilla 'awesome_dashboard.ConfigurationDialog' -->
+    <t t-name="awesome_dashboard.ConfigurationDialog">
+        <!-- Componente Dialog para mostrar la configuración de los elementos del dashboard -->
+        <Dialog title="'Dashboard - configuración de items'">
+            <!-- Mensaje de introducción -->
+            Que información quieres ver?
+            <!-- Itera sobre los items para mostrar un checkbox por cada uno -->
+            <t t-foreach="items" t-as="item" t-key="item.id">
+                <CheckBox value="item.enabled" onChange="(ev) => this.onChange(ev, item)">
+                    <t t-esc="item.description"/>
+                </CheckBox>
+            </t>
+            <!-- Área del pie de diálogo, con un botón para aceptar la configuración -->
+            <t t-set-slot="footer">
+                <button class="btn btn-primary" t-on-click="done">
+                    Aceptar
+                </button>
+            </t>
+        </Dialog>
+    </t>
+</templates>

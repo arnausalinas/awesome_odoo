@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- Define una plantilla con el nombre 'awesome_gallery.GalleryImage'. -->
+    <t t-name="awesome_gallery.GalleryImage">
+        
+        <!-- Contenedor principal para la imagen y el cargador de archivos. -->
+        <div t-ref="tooltip" class="card w-100 mb-4" t-on-click="() => this.onImageClick(props.record.id)" t-att-data-tooltip="props.record[props.model.tooltipField]">            
+        <!-- Referencia al tooltip para el componente. --><!-- Clase para el estilo del contenedor de la imagen. -->
+        <!-- Evento que maneja el clic en la imagen para cambiar la vista. --><!-- Asigna el texto del tooltip usando el campo proporcionado en el modelo. -->
+            
+            <!-- Muestra la imagen si el campo de la imagen en el registro está definido. -->
+            <img t-if='props.record[props.model.imageField]' loading="lazy" t-att-src='imageUrl'/>
+            <!-- Verifica si hay una imagen en el registro. --><!-- Habilita la carga diferida de la imagen para mejorar el rendimiento. -->
+            <!-- Asigna la URL de la imagen generada en el componente. -->
+
+            <!-- Contenedor para el cargador de archivos, que se muestra cuando se pasa el cursor sobre la imagen. -->
+            <div t-on-click.stop="" class="h-100 opacity-0 opacity-100-hover"><!-- Evita que el clic en este contenedor propague eventos. -->
+                <!-- Componente `FileUploader` para cargar imágenes. --><!-- Estilo para que el contenedor sea completamente visible al pasar el cursor. -->
+                <FileUploader acceptedFileExtensions="'image/*'" onUploaded.bind="_onFileUploaded"><!-- Acepta solo archivos de imagen. -->
+                <!-- Asocia la función `_onFileUploaded` al evento de carga de archivos. -->
+                    
+                    <!-- Define un botón dentro del slot `toggler` para activar el cargador de archivos. -->
+                    <t t-set-slot="toggler">
+                        <button class="btn btn-secondary position-absolute bottom-0 end-0 m-3"> Upload image </button>
+                    </t>
+                </FileUploader>
+            </div>
+        </div>
+    </t>
+</templates>

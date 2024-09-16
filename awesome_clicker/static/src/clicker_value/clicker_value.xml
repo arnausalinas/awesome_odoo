@@ -1,0 +1,10 @@
+<templates xml:space="preserve">
+    <!-- Definición de la plantilla para el componente ClickerValue -->
+    <t t-name="awesome_clicker.ClickerValue">
+        <!-- Elemento que muestra el valor humanizado de los clics -->
+        <span 
+            t-att-data-tooltip="this.clicker.clicks"
+            t-esc="humanizedClicks"  
+        /><!-- Tooltip que muestra el número exacto de clics --><!-- Muestra el número de clics en formato humanizado -->
+    </t>
+</templates>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <!-- Definición de la plantilla 'awesome_dashboard.PieChart' -->
+    <t t-name="awesome_dashboard.PieChart">
+        <!-- Contenedor principal del gráfico, con clases de estilo para altura y clase adicional -->
+        <div t-att-class="'h-100 ' + props.class" t-ref="root">
+            <!-- Contenedor del canvas, con clase para posición relativa y altura completa -->
+            <div class="h-100 position-relative" t-ref="container">
+                <!-- Elemento canvas donde se renderiza el gráfico -->
+                <canvas t-ref="canvas" />
+            </div>
+        </div>
+    </t>
+</templates>

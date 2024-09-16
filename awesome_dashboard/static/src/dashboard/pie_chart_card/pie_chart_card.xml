@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <!-- Definición de la plantilla 'awesome_dashboard.PieChartCard' -->
+    <t t-name="awesome_dashboard.PieChartCard" owl="1">
+        <!-- Muestra el título del card, escapando el contenido para evitar problemas de seguridad -->
+        <t t-esc="props.title"/>
+        
+        <!-- Usa el componente PieChart como un subcomponente -->
+        <!-- Pasa 'props.values' como datos para el gráfico y una cadena vacía como etiqueta -->
+        <PieChart data="props.values" label="''"/>
+    </t>
+</templates>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <!-- Define una plantilla con el nombre 'awesome_gallery.GalleryController'. -->
+    <t t-name="awesome_gallery.GalleryController">
+        <!-- Usa el componente `Layout` para estructurar la vista, configurando sus propiedades. -->
+        <Layout display="props.display" className="'h-100 overflow-auto'">
+            <!-- Inserta el componente definido en `props.Renderer` dentro del `Layout`. -->
+            <!-- Se pasan las siguientes propiedades al componente `Renderer`: -->
+            <!-- - `model`: el modelo que contiene los datos. -->
+            <!-- - `onImageUpload`: la función para manejar la carga de imágenes, vinculada con `bind`. -->
+            <!-- - `tooltipTemplate`: la plantilla del tooltip extraída de `props.archInfo.tooltipTemplate`. -->
+            <t t-component="props.Renderer" 
+               model="model" 
+               onImageUpload.bind="onImageUpload" 
+               tooltipTemplate="props.archInfo.tooltipTemplate"/>
+        </Layout>
+    </t>
+
+</templates>

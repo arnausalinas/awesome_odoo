@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <!-- Define la plantilla para el componente `Carta` -->
+    <t t-name="awesome_owl.carta" owl="1">
+        <!-- Contenedor de la carta con clases para el estilo de Bootstrap -->
+        <div class="card d-inline-block m-2" style="width: 18rem;">
+            <div class="card-body">
+                <!-- Título de la carta que muestra `title` e `id` pasados como props -->
+                <h5 class="card-title">
+                    <!-- Muestra el título de la carta -->
+                    <t t-out="props.title"/>
+                    <!-- Muestra el ID de la carta -->
+                    <t t-out="props.id"/>
+                </h5>
+                <!-- Contenedor del contenido de la carta -->
+                <div>
+                    <!-- Solo muestra el contenido del slot `default` si `state.open` es `true` -->
+                    <t t-if="state.open">
+                        <!-- Slot `default` donde se puede pasar contenido personalizado -->
+                        <t t-slot="default"/>
+                    </t>
+                </div>
+                <!-- Botón para alternar el contenido (mostrar/ocultar) -->
+                <button t-on-click="toggleContent">
+                    <!-- Si `state.open` es `true`, muestra "Ocultar", de lo contrario "Mostrar" -->
+                    <t t-if="state.open">Ocultar</t>
+                    <t t-if="!state.open">Mostrar</t>
+                </button>
+            </div>
+        </div>
+    </t>
+</templates>
