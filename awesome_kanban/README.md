@@ -84,7 +84,7 @@ Este módulo está diseñado para proporcionar una vista Kanban interactiva y co
 ¡Gracias por explorar el módulo Awesome Kanban! Si tienes alguna pregunta, sugerencia o necesitas ayuda, no dudes en ponerte en contacto.
 
 **Autor**: Arnau Salinas  
-**Email**: [arnau.salinas@example.com](mailto:arnau.salinas@example.com)  
+**Email**: [arnau.salinas@example.com](mailto:arnau@planesnet.com)  
 **GitHub**: [ArnauSalinas](https://github.com/arnausalinas)  
 **LinkedIn**: [Arnau Salinas](https://www.linkedin.com/in/arnau-salinas-2426bsb)
 
