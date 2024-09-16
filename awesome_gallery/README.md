@@ -82,7 +82,7 @@ Define la plantilla XML para el componente `GalleryImage`.
 ¡Gracias por explorar el módulo Awesome Gallery! Si tienes alguna pregunta, sugerencia o necesitas ayuda, no dudes en ponerte en contacto.
 
 **Autor**: Arnau Salinas  
-**Email**: [arnau.salinas@example.com](mailto:arnau@planesnet.com)
+**Email**: [arnau@planesnet.com](mailto:arnau@planesnet.com)
 **GitHub**: [ArnauSalinas](https://github.com/arnausalinas)  
 **LinkedIn**: [Arnau Salinas](https://www.linkedin.com/in/arnau-salinas-2426bsb)
 
