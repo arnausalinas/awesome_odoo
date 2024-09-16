@@ -185,7 +185,7 @@ Este `README.md` proporciona una visión general de los archivos incluidos en el
 ¡Gracias por explorar el módulo Awesome OWL! Si tienes alguna pregunta, sugerencia o necesitas ayuda, no dudes en ponerte en contacto.
 
 **Autor**: Arnau Salinas  
-**Email**: [arnau.salinas@example.com](mailto:arnau.salinas@example.com)  
+**Email**: [arnau.salinas@example.com](mailto:arnau@planesnet.com)
 **GitHub**: [ArnauSalinas](https://github.com/arnausalinas)  
 **LinkedIn**: [Arnau Salinas](https://www.linkedin.com/in/arnau-salinas-2426bsb)
 
