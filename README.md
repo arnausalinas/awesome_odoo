@@ -18,6 +18,9 @@ Bienvenido a este repositorio de proyectos de Odoo 17. Aquí encontrarás una co
 
 5. **awesome_kanban**
    - Un proyecto que desarrolla una vista de Kanban personalizada para la gestión de tareas o proyectos.
+  
+6. **herencia_componente**
+   - Un proyecto que practica la herencia de componentes OWL.
 
 ## Instalación
 
