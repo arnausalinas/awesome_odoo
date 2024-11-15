@@ -1,0 +1,11 @@
+<templates>
+    <t t-name="herencia_componente.Componente1Template">
+        <div id="divGenerico">
+            <input type="number" t-model="props.valor1"/>
+            <input type="number" t-model="props.valor2"/>
+            <button t-on-click="onCalcular" id="botonCalcular">Calcular</button>
+            <label>Resultado -></label>
+            <input type="number" id="resultado" t-att-value="this.state.resultado"/>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,10 @@
+<odoo>
+  <template id="vista_generica">
+    <t t-call="portal.frontend_layout">
+      <owl-component name="herencia_componente.Componente1"/>
+      <h4/>
+      <owl-component name="herencia_componente.HerenciaComponente1"/>
+
+    </t>
+  </template>
+</odoo>
